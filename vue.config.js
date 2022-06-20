@@ -1,6 +1,10 @@
-const { defineConfig } = require('@vue/cli-service');
+'use strict';
+const path = require('path');
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
 
-module.exports = defineConfig({
+module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
     ? '/production-sub-path/'
     : '/',
@@ -12,8 +16,11 @@ module.exports = defineConfig({
   lintOnSave: process.env.NODE_ENV === 'development',
   // 如果你不需要生产环境的 source map，可以将其设置为 false 以加速生产环境构建。
   productionSourceMap: false,
+  devServer: {
+    host: '0.0.0.0',
+    port: 8133
+  },
   configureWebpack: {
-    name: name,
     resolve: {
       alias: {
         '@': resolve('src'),
@@ -23,5 +30,11 @@ module.exports = defineConfig({
         components: resolve('src/components')
       }
     }
+  },
+  chainWebpack: config => {
+    config.plugin('html').tap(args => {
+      args[0].title = process.env.VUE_APP_TITLE;
+      return args;
+    });
   }
-})
+}
