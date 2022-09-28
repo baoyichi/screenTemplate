@@ -1,13 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <top-nav v-show="$route.meta.showTopNav"></top-nav>
     <router-view />
   </div>
 </template>
 
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import TopNav from '@/views/TopNav.vue';
+
+@Component({
+  components: {
+    'top-nav': TopNav
+  }
+})
+export default class App extends Vue {}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

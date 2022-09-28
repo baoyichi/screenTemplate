@@ -39,7 +39,7 @@ export class TdOlMap {
   // 天地图注记
   private annotation = new Tile({
     source: new XYZ({
-      url: 'http://t3.tianditu.com/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=69c7ac9c8ca30d61ab67ba6775a7d3f3'
+      url: `http://t3.tianditu.com/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=${this.tk}`
     })
   });
 
