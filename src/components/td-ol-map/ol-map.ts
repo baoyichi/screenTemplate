@@ -9,8 +9,6 @@ import Stroke from 'ol/style/Stroke';
 
 @Component
 export default class OlMap extends Vue {
-  offsetHeight: string | undefined = `${document.body.offsetHeight + 20}px`;
-  offsetWidth: string | undefined = `${document.body.offsetWidth - 37}px`;
   zoom = 4;
 
   olMap?: TdOlMap;
