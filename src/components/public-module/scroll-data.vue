@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <dv-scroll-board :config="formData" style="width: 400px; height: 252px" />
+    <dv-scroll-board :config="formData" style="width: 100%; height: 252px" />
   </div>
 </template>
 
@@ -15,6 +15,9 @@ export default class ScrollData extends Vue {
 </script>
 
 <style scoped lang="scss">
+#container {
+  width: 100%;
+}
 .dv-scroll-board {
   color: rgba(0, 0, 0, 0.85);
 }

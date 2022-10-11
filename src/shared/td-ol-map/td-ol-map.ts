@@ -56,13 +56,6 @@ export class TdOlMap {
     })
   });
 
-  // 中文注记
-  private chineseNotes = new Tile({
-    source: new XYZ({
-      url: `http://t3.tianditu.com/DataServer?T=cta&x={x}&y={y}&l={z}&tk=${this.tk}`
-    })
-  });
-
   constructor(containerId: string, options: MapOptions) {
     this.extent = [-33554432.0, -33554432.0, 33554432.0, 33554432.0];
     const mapMinZoom = 12;
@@ -76,16 +69,6 @@ export class TdOlMap {
       minZoom: mapMinZoom,
       origin: getCenter(this.extent),
       resolutions: mapResolution
-    });
-
-    const layer = new Tile({
-      source: new XYZ({
-        projection: MapProjEnum.EPSG3857,
-        tileGrid: mapTileGrid,
-        tileUrlFunction: (xyz: number[]) => {
-          return `/maptiler/${xyz[0]}/${xyz[1]}/${xyz[2]}.png`;
-        }
-      })
     });
 
     this.view = new View({
@@ -105,7 +88,7 @@ export class TdOlMap {
       logo: false,
       controls: defaultControls({ attribution: false, zoom: false, rotate: false }).extend([]),
       target: containerId,
-      layers: [this.roadLayer, this.annotation, this.chineseNotes, layer, paintLayer],
+      layers: [this.roadLayer, this.annotation, paintLayer],
       view: this.view
     };
 

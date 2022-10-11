@@ -14,6 +14,7 @@ export default class CircleDecoration extends Vue {}
 <style scoped lang="scss">
 #container {
   flex: 0 1 50%;
+  margin: 0 auto;
 }
 
 .dv-decoration-9 {

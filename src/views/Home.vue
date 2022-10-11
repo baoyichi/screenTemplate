@@ -44,10 +44,10 @@
             </div>
             <div class="card-body center-card-body">
               <div class="wrap-items-box-card">
-                <chart :echarts-name="'radarCharts'" :option="radarOption"></chart>
+                <chart :echarts-name="'circleCharts'" :option="circleOption"></chart>
               </div>
               <div class="wrap-items-box-card">
-                <chart :echarts-name="'gaugeCharts'" :option="gaugeOption"></chart>
+                <chart :echarts-name="'areaCharts'" :option="areaOption"></chart>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
               <div class="card-head-title">标题</div>
             </div>
             <div class="card-body">
-              <dv-decoration-12 style="width:150px;height:150px;" />
+              <capsule></capsule>
             </div>
           </div>
         </div>
@@ -95,9 +95,11 @@ import Chart from '@/components/public-module/chart.vue';
 import OlMap from '@/components/td-ol-map/ol-map.vue';
 import CircleDecoration from '@/components/public-module/circle-decoration.vue';
 import ScrollData from '@/components/public-module/scroll-data.vue';
+import Capsule from '@/components/public-module/capsule.vue';
 
 @Component({
   components: {
+    Capsule,
     ScrollData,
     CircleDecoration,
     'ol-map': OlMap,
@@ -220,52 +222,118 @@ export default class Home extends Vue {
       }
     ]
   };
-  radarOption = {
-    legend: {
-      data: ['Actual Spending'],
-      left: 'left'
+  circleOption = {
+    tooltip: {
+      trigger: 'item'
     },
-    radar: {
-      // shape: 'circle',
-      indicator: [
-        { name: 'Sales', max: 6500 },
-        { name: 'Administration', max: 16000 },
-        { name: 'Information Technology', max: 30000 },
-        { name: 'Customer Support', max: 38000 },
-        { name: 'Development', max: 52000 },
-        { name: 'Marketing', max: 25000 }
-      ]
+    legend: {
+      top: '5%',
+      left: 'center'
     },
     series: [
       {
-        name: 'Budget vs spending',
-        type: 'radar',
-        data: [
-          {
-            value: [5000, 14000, 28000, 26000, 42000, 21000],
-            name: 'Actual Spending'
+        name: 'Access From',
+        type: 'pie',
+        radius: ['50%', '70%'],
+        center: ['50%', '65%'],
+        avoidLabelOverlap: false,
+        label: {
+          show: false,
+          position: 'center'
+        },
+        emphasis: {
+          label: {
+            show: true,
+            fontSize: '40',
+            fontWeight: 'bold'
           }
+        },
+        labelLine: {
+          show: false
+        },
+        data: [
+          { value: 1048, name: 'Search Engine' },
+          { value: 735, name: 'Direct' },
+          { value: 580, name: 'Email' },
+          { value: 484, name: 'Union Ads' }
         ]
       }
     ]
   };
-  gaugeOption = {
+  areaOption = {
     tooltip: {
-      formatter: '{a} <br/>{b} : {c}%'
+      trigger: 'axis',
+      axisPointer: {
+        type: 'cross',
+        label: {
+          backgroundColor: '#6a7985'
+        }
+      }
     },
+    legend: {
+      data: ['Email', 'Union Ads', 'Video Ads', 'Direct']
+    },
+    toolbox: {
+      show: false
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
+    xAxis: [
+      {
+        type: 'category',
+        boundaryGap: false,
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      }
+    ],
+    yAxis: [
+      {
+        type: 'value'
+      }
+    ],
     series: [
       {
-        name: 'Pressure',
-        type: 'gauge',
-        detail: {
-          formatter: '{value}'
+        name: 'Email',
+        type: 'line',
+        stack: 'Total',
+        areaStyle: {},
+        emphasis: {
+          focus: 'series'
         },
-        data: [
-          {
-            value: 50,
-            name: 'SCORE'
-          }
-        ]
+        data: [120, 132, 101, 134, 90, 230, 210]
+      },
+      {
+        name: 'Union Ads',
+        type: 'line',
+        stack: 'Total',
+        areaStyle: {},
+        emphasis: {
+          focus: 'series'
+        },
+        data: [220, 182, 191, 234, 290, 330, 310]
+      },
+      {
+        name: 'Video Ads',
+        type: 'line',
+        stack: 'Total',
+        areaStyle: {},
+        emphasis: {
+          focus: 'series'
+        },
+        data: [150, 232, 201, 154, 190, 330, 410]
+      },
+      {
+        name: 'Direct',
+        type: 'line',
+        stack: 'Total',
+        areaStyle: {},
+        emphasis: {
+          focus: 'series'
+        },
+        data: [320, 332, 301, 334, 390, 330, 320]
       }
     ]
   };
