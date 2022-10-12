@@ -2,7 +2,7 @@
   <div id="nav">
     <router-link to="/home">Home</router-link>
     |
-    <router-link to="/home1">About</router-link>
+    <router-link to="/second">Second</router-link>
   </div>
 </template>
 

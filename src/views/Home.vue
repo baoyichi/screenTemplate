@@ -35,7 +35,7 @@
       </div>
       <div class="wrap-items center">
         <div ref="map" class="wrap-items-box map">
-          <ol-map></ol-map>
+          <ol-map :current-map="isLayoutOne"></ol-map>
         </div>
         <div class="wrap-items-box">
           <div class="wrap-items-box-card">
@@ -110,6 +110,7 @@ export default class Home extends Vue {
   /**
    * 中间地图被框起来的模式
    */
+  isLayoutOne = true;
   lineOption = {
     tooltip: {
       trigger: 'axis'

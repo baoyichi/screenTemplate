@@ -61,67 +61,6 @@ li {
       padding: 0 12px;
       box-sizing: border-box;
 
-      .wrap-items-box {
-        min-height: 1px;
-        background-color: #ffffff;
-
-        &:nth-child(2) {
-          margin: 24px 0;
-        }
-
-        .wrap-items-box-card {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-          color: rgba(0, 0, 0, 0.85);
-          font-size: 14px;
-          font-variant: tabular-nums;
-          line-height: 1.5715;
-          list-style: none;
-          font-feature-settings: "tnum", "tnum";
-          position: relative;
-          border-radius: 2px;
-
-          .card-head {
-            min-height: 48px;
-            padding: 0 24px;
-            color: rgba(0, 0, 0, 0.85);
-            font-weight: 500;
-            font-size: 16px;
-            background: 0 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-            border-radius: 2px 2px 0 0;
-            align-items: center;
-            text-align: left;
-
-            .card-head-title {
-              display: inline-block;
-              flex: 1 1 0;
-              padding: 16px 0;
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis;
-            }
-          }
-
-          .card-body {
-            padding: 24px;
-            display: flex;
-            flex-flow: row wrap;
-          }
-
-          .center-card-body {
-            display: flex;
-            flex-flow: row wrap;
-
-            .wrap-items-box-card {
-              flex: 0 1 50%;
-              max-width: 50%;
-            }
-          }
-        }
-      }
-
       .map {
         height: 650px;
       }
@@ -136,9 +75,70 @@ li {
       }
     }
   }
+
+  .wrap-items-box {
+    min-height: 1px;
+    background-color: #ffffff;
+
+    &:nth-child(2) {
+      margin: 24px 0;
+    }
+
+    .wrap-items-box-card {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      color: rgba(0, 0, 0, 0.85);
+      font-size: 14px;
+      font-variant: tabular-nums;
+      line-height: 1.5715;
+      list-style: none;
+      font-feature-settings: "tnum", "tnum";
+      position: relative;
+      border-radius: 2px;
+
+      .card-head {
+        min-height: 48px;
+        padding: 0 24px;
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 500;
+        font-size: 16px;
+        background: 0 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 2px 2px 0 0;
+        align-items: center;
+        text-align: left;
+
+        .card-head-title {
+          display: inline-block;
+          flex: 1 1 0;
+          padding: 16px 0;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .card-body {
+        padding: 24px;
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .center-card-body {
+        display: flex;
+        flex-flow: row wrap;
+
+        .wrap-items-box-card {
+          flex: 0 1 50%;
+          max-width: 50%;
+        }
+      }
+    }
+  }
 }
 
-@media (min-width: 2500px) {
+@media (min-width: 2000px) {
   .echartsContainer {
     height: 300px !important;
   }
@@ -152,6 +152,12 @@ li {
     height: 200px !important;
   }
 
+  .layout-wrap-right {
+    .dv-scroll-board {
+      height: 300px !important;
+    }
+  }
+
   .dv-scroll-board {
     height: 400px !important;
   }
@@ -159,6 +165,10 @@ li {
   .dv-capsule-chart {
     height: 300px !important;
     width: 300px !important;
+  }
+
+  .layout-two .map {
+    height: 1256px !important;
   }
 }
 

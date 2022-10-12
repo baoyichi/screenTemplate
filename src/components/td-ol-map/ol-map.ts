@@ -6,9 +6,13 @@ import { transform } from 'ol/proj';
 import { Fill, Icon, Style, Text } from 'ol/style';
 import { TdOlMapFeatureTypeEnum } from '@/shared/td-ol-map/td-ol-map-feature-type.enum';
 import Stroke from 'ol/style/Stroke';
+import { Prop } from 'vue-property-decorator';
 
 @Component
 export default class OlMap extends Vue {
+  @Prop({ default: false, type: Boolean })
+  currentMap?: boolean;
+
   zoom = 4;
 
   olMap?: TdOlMap;
@@ -18,7 +22,11 @@ export default class OlMap extends Vue {
   }
 
   private initOlMap(): void {
-    this.olMap = new TdOlMap('tdOlMap', {});
+    if (this.currentMap) {
+      this.olMap = new TdOlMap('tdOlMap', {});
+    } else {
+      this.olMap = new TdOlMap('tdOlMapSecond', {});
+    }
     const dblClickInteraction: any | undefined = this.olMap.map
       ?.getInteractions()
       .getArray()

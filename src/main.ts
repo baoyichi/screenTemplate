@@ -4,7 +4,7 @@ import router from './router';
 import store from './store';
 import ElementUI from 'element-ui';
 import * as echarts from 'echarts';
-import { decoration12, decoration9, scrollBoard, capsuleChart } from '@jiaminghi/data-view';
+import { decoration12, decoration9, scrollBoard, capsuleChart, scrollRankingBoard } from '@jiaminghi/data-view';
 
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/style/common.scss';
@@ -15,6 +15,7 @@ Vue.use(decoration9);
 Vue.use(decoration12);
 Vue.use(scrollBoard);
 Vue.use(capsuleChart);
+Vue.use(scrollRankingBoard);
 Vue.config.productionTip = false;
 
 new Vue({

@@ -8,4 +8,5 @@ declare module '@jiaminghi/data-view' {
   export const decoration12: any;
   export const scrollBoard: any;
   export const capsuleChart: any;
+  export const scrollRankingBoard: any;
 }
