@@ -111,20 +111,7 @@ export default class Home1 extends Vue {
         value: 44231
       }
     ],
-    unit: '单位',
-    valueFormatter({ value }) {
-      console.warn(arguments);
-      const reverseNumber = (value + '').split('').reverse();
-      let valueStr = '';
-
-      while (reverseNumber.length) {
-        const seg = reverseNumber.splice(0, 3).join('');
-        valueStr += seg;
-        if (seg.length === 3) valueStr += ',';
-      }
-
-      return valueStr.split('').reverse().join('');
-    }
+    unit: ''
   };
   lineOption = {
     tooltip: {
