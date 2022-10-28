@@ -42,6 +42,6 @@ export default class Capsule extends Vue {
 }
 
 .dv-capsule-chart {
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 </style>
