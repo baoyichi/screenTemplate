@@ -6,56 +6,30 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import * as echarts from 'echarts';
 
 @Component
 export default class Chart extends Vue {
-  private $echarts: any;
-
   @Prop({ default: '', type: String })
   echartsName!: string;
 
   @Prop({ default: {}, type: Object })
-  option?: {};
+  option?: any;
 
   myCharts: any;
 
   mounted() {
-    this.initLineEcharts();
-    this.initPieEcharts();
-    this.initBarEcharts();
-    this.initCircleEcharts();
-    this.initAreaEcharts();
+    if (this.option === undefined) {
+      return console.error('option为空');
+    }
+    this.initEcharts();
     this.setResize();
   }
 
-  initLineEcharts(): void {
-    const lineEcharts = this.$echarts.init(document.getElementById(this.echartsName));
-    this.myCharts = lineEcharts;
-    lineEcharts.setOption(this.option);
-  }
-
-  initPieEcharts(): void {
-    const pieEcharts = this.$echarts.init(document.getElementById(this.echartsName));
-    this.myCharts = pieEcharts;
-    pieEcharts.setOption(this.option);
-  }
-
-  initBarEcharts(): void {
-    const barEcharts = this.$echarts.init(document.getElementById(this.echartsName));
-    this.myCharts = barEcharts;
-    barEcharts.setOption(this.option);
-  }
-
-  initCircleEcharts(): void {
-    const circleEcharts = this.$echarts.init(document.getElementById(this.echartsName));
-    this.myCharts = circleEcharts;
-    circleEcharts.setOption(this.option);
-  }
-
-  initAreaEcharts(): void {
-    const areaEcharts = this.$echarts.init(document.getElementById(this.echartsName));
-    this.myCharts = areaEcharts;
-    areaEcharts.setOption(this.option);
+  initEcharts(): void {
+    const myEcharts = echarts.init(document.getElementById(this.echartsName) as HTMLDivElement);
+    this.myCharts = myEcharts;
+    myEcharts.setOption(this.option);
   }
 
   setResize(): void {
