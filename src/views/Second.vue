@@ -118,10 +118,7 @@ export default class Home1 extends Vue {
       trigger: 'axis'
     },
     legend: {
-      data: ['Email', 'Union Ads', 'Video Ads'],
-      textStyle: {
-        color: '#ffffff'
-      }
+      data: ['Email', 'Union Ads', 'Video Ads']
     },
     grid: {
       left: '3%',
@@ -135,16 +132,10 @@ export default class Home1 extends Vue {
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      axisLabel: {
-        color: '#ffffff'
-      }
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     },
     yAxis: {
-      type: 'value',
-      axisLabel: {
-        color: '#ffffff'
-      }
+      type: 'value'
     },
     series: [
       {
@@ -173,10 +164,7 @@ export default class Home1 extends Vue {
     },
     legend: {
       top: '5%',
-      left: 'center',
-      textStyle: {
-        color: '#ffffff'
-      }
+      left: 'center'
     },
     series: [
       {
@@ -214,10 +202,7 @@ export default class Home1 extends Vue {
     },
     legend: {
       orient: 'horizontal',
-      left: 'left',
-      textStyle: {
-        color: '#ffffff'
-      }
+      left: 'left'
     },
     series: [
       {
@@ -277,7 +262,6 @@ export default class Home1 extends Vue {
   .map {
     height: calc(100vh - 81px);
     width: 100%;
-    background-image: none;
   }
 
   .layout-wrap {
@@ -289,7 +273,6 @@ export default class Home1 extends Vue {
 
     .wrap-items-box {
       background-color: rgba(0, 0, 0, 0.3);
-      border-radius: 15px;
 
       .card-head {
         color: #ffffff;

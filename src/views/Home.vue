@@ -116,10 +116,7 @@ export default class Home extends Vue {
       trigger: 'axis'
     },
     legend: {
-      data: ['Email', 'Union Ads', 'Video Ads'],
-      textStyle: {
-        color: '#ffffff'
-      }
+      data: ['Email', 'Union Ads', 'Video Ads']
     },
     grid: {
       left: '3%',
@@ -133,16 +130,10 @@ export default class Home extends Vue {
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      axisLabel: {
-        color: '#ffffff'
-      }
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     },
     yAxis: {
-      type: 'value',
-      axisLabel: {
-        color: '#ffffff'
-      }
+      type: 'value'
     },
     series: [
       {
@@ -171,10 +162,7 @@ export default class Home extends Vue {
     },
     legend: {
       orient: 'horizontal',
-      left: 'left',
-      textStyle: {
-        color: '#ffffff'
-      }
+      left: 'left'
     },
     series: [
       {
@@ -206,10 +194,7 @@ export default class Home extends Vue {
       }
     },
     legend: {
-      right: 0,
-      textStyle: {
-        color: '#ffffff'
-      }
+      right: 0
     },
     grid: {
       left: '3%',
@@ -219,17 +204,11 @@ export default class Home extends Vue {
     },
     xAxis: {
       type: 'value',
-      boundaryGap: [0, 0.01],
-      axisLabel: {
-        color: '#ffffff'
-      }
+      boundaryGap: [0, 0.01]
     },
     yAxis: {
       type: 'category',
-      data: ['Brazil', 'Indonesia', 'USA', 'India', 'China', 'World'],
-      axisLabel: {
-        color: '#ffffff'
-      }
+      data: ['Brazil', 'Indonesia', 'USA', 'India', 'China', 'World']
     },
     series: [
       {
@@ -250,10 +229,7 @@ export default class Home extends Vue {
     },
     legend: {
       top: '5%',
-      left: 'center',
-      textStyle: {
-        color: '#ffffff'
-      }
+      left: 'center'
     },
     series: [
       {
@@ -296,10 +272,7 @@ export default class Home extends Vue {
       }
     },
     legend: {
-      data: ['Email', 'Union Ads', 'Video Ads', 'Direct'],
-      textStyle: {
-        color: '#ffffff'
-      }
+      data: ['Email', 'Union Ads', 'Video Ads', 'Direct']
     },
     toolbox: {
       show: false
@@ -314,18 +287,12 @@ export default class Home extends Vue {
       {
         type: 'category',
         boundaryGap: false,
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        axisLabel: {
-          color: '#ffffff'
-        }
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
       }
     ],
     yAxis: [
       {
-        type: 'value',
-        axisLabel: {
-          color: '#ffffff'
-        }
+        type: 'value'
       }
     ],
     series: [
