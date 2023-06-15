@@ -1,15 +1,21 @@
 <template>
   <div id="container">
+    <img :src="titlePic" alt="" />
     <div class="login-box">
       <div class="wrapper">
-        <div class="wrapper-left-bg"></div>
+        <p>欢迎登录</p>
         <div class="wrapper-form">
-          <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="70px" class="demo-ruleForm">
-            <el-form-item label="用户名" prop="name">
+          <el-form label-position="top" :model="ruleForm" ref="ruleForm" class="demo-ruleForm">
+            <el-form-item label="用户名">
               <el-input v-model="ruleForm.name" placeholder="请输入用户名"></el-input>
             </el-form-item>
-            <el-form-item label="密码" prop="password">
+            <el-form-item label="密码">
               <el-input v-model="ruleForm.password" type="password" placeholder="请输入密码"></el-input>
+            </el-form-item>
+            <el-form-item label="">
+              <el-checkbox-group v-model="ruleForm.remember">
+                <el-checkbox label="记住密码" name="type"></el-checkbox>
+              </el-checkbox-group>
             </el-form-item>
             <el-form-item>
               <el-button type="primary" @click="submitForm()">登录</el-button>
@@ -27,9 +33,11 @@ import { Form } from 'element-ui';
 
 @Component
 export default class Login extends Vue {
+  titlePic = require('@/assets/images/login/title-pic.png');
   ruleForm = {
     name: '',
-    password: ''
+    password: '',
+    remember: false
   };
   rules = {
     name: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
@@ -39,7 +47,6 @@ export default class Login extends Vue {
   submitForm(): void {
     (this.$refs.ruleForm as Form).validate(valid => {
       if (valid) {
-        //  TODO: 登录接口
         this.$router.push({
           path: '/home'
         });
@@ -60,38 +67,40 @@ export default class Login extends Vue {
   align-items: center;
   flex: 1 1 0;
   background-attachment: fixed;
+
+  img {
+    position: absolute;
+    left: 150.4px;
+    top: 129.48px;
+  }
 }
 .login-box {
-  display: flex;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
+  position: absolute;
+  width: 368px;
+  height: 473px;
+  left: calc(50% - 368px / 2);
+  top: calc(50% - 459px / 2 + 0.5px);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(5px);
+  border-radius: 4px;
   box-sizing: border-box;
-  margin: 0 auto;
-  width: 782px;
-  height: 518px;
-  position: relative;
-  background-color: rgb(255, 255, 255);
-  overflow: hidden;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
 
   .wrapper {
-    width: 100%;
+    width: auto;
     height: 408px;
-    margin-top: 40px;
-    display: flex;
+    padding: 32px;
+    text-align: left;
 
-    .wrapper-left-bg {
-      width: 200px;
-      padding: 0 50px;
-      border-right: 0.5px solid rgb(196, 203, 215);
+    p {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 28px;
     }
 
     .wrapper-form {
-      width: 320px;
-      padding-left: 50px;
+      width: 304px;
+      margin-top: 38px;
     }
   }
 

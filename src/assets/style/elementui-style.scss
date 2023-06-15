@@ -1,0 +1,35 @@
+.login-box {
+  .el-form-item {
+    margin-bottom: 32px;
+
+    &:nth-child(2) {
+      margin-bottom: 28px;
+    }
+  }
+
+  .el-form--label-top .el-form-item__label {
+    line-height: 22px;
+    padding: 0 0 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+  .el-input__inner {
+    height: 48px;
+    line-height: 48px;
+  }
+
+  .el-checkbox {
+    color: #ffffff;
+  }
+  .el-button {
+    height: 48px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+  }
+}

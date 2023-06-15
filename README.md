@@ -5,6 +5,13 @@
 首页的内容元素分为8个模块框，以组件的方式引入，类别有：图表、文字滚动、静态文字展示。同时支持不同分辨率的展示。
 登录页也做了常规的布局：大背景图+登录框。
 
+## 系统截图
+### 地图作为模块展示的布局
+![img.png](src/assets/images/md-pic/img.png)
+
+### 地图作为背景展示的布局
+![img_1.png](src/assets/images/md-pic/img_1.png)
+
 
 ## Project setup
 ```
@@ -31,5 +38,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 相关链接
 eslint：https://eslint.bootcss.com/  
+ElementUI：https://element.eleme.io/#/zh-CN/component/installation  
 OpenLayers：https://openlayers.org/  
 dataV: http://datav.jiaminghi.com/guide/    
