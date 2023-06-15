@@ -27,10 +27,13 @@ export default class App extends Vue {}
 
 #nav {
   padding: 30px;
+  background-image: url('assets/images/bg/nav-bg.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #ffffff;
 
     &.router-link-exact-active {
       color: #42b983;

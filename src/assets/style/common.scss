@@ -1,4 +1,4 @@
-@import "elementui-style.scss";
+@import 'elementui-style.scss';
 
 html,
 body,
@@ -15,6 +15,10 @@ h1 {
   font-family: 'Microsoft YaHei', Arial, Helvetica, 'STHeiti STXihei', Tohoma, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+#app {
+  background-color: rgb(0, 1, 28);
 }
 
 p {
@@ -45,7 +49,7 @@ li {
 .home {
   height: auto;
   position: relative;
-  background: #f0f2f5;
+  background-color: rgb(0, 1, 28);
   padding: 24px;
 
   .wrap-responsive {
@@ -78,7 +82,9 @@ li {
 
   .wrap-items-box {
     min-height: 1px;
-    background-color: #ffffff;
+    background-image: url('../images/bg/wrap-box-bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 
     &:nth-child(2) {
       margin: 24px 0;
@@ -88,23 +94,23 @@ li {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      color: rgba(0, 0, 0, 0.85);
+      color: rgba(255, 255, 255, 0.85);
       font-size: 14px;
       font-variant: tabular-nums;
       line-height: 1.5715;
       list-style: none;
-      font-feature-settings: "tnum", "tnum";
+      font-feature-settings: 'tnum', 'tnum';
       position: relative;
       border-radius: 2px;
 
       .card-head {
         min-height: 48px;
         padding: 0 24px;
-        color: rgba(0, 0, 0, 0.85);
+        color: rgba(255, 255, 255, 0.85);
         font-weight: 500;
         font-size: 16px;
         background: 0 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         border-radius: 2px 2px 0 0;
         align-items: center;
         text-align: left;

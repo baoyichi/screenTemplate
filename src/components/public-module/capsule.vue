@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <dv-capsule-chart :config="config" style="width:300px;height:200px" />
+    <dv-capsule-chart :config="config" style="width: 300px; height: 200px" />
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default class Capsule extends Vue {
         value: 98
       }
     ]
-  }
+  };
 }
 </script>
 
@@ -42,6 +42,6 @@ export default class Capsule extends Vue {
 }
 
 .dv-capsule-chart {
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 </style>
