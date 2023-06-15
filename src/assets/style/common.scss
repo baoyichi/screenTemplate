@@ -1,4 +1,4 @@
-@import "elementui-style.scss";
+@import 'elementui-style.scss';
 
 html,
 body,
@@ -82,7 +82,7 @@ li {
 
   .wrap-items-box {
     min-height: 1px;
-    background-image: url("../images/bg/wrap-box-bg.png");
+    background-image: url('../images/bg/wrap-box-bg.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -99,7 +99,7 @@ li {
       font-variant: tabular-nums;
       line-height: 1.5715;
       list-style: none;
-      font-feature-settings: "tnum", "tnum";
+      font-feature-settings: 'tnum', 'tnum';
       position: relative;
       border-radius: 2px;
 

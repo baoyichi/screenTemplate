@@ -1,47 +1,36 @@
 <template>
   <div id="container">
-    <dv-capsule-chart :config="config" style="width:300px;height:200px" />
+    <dv-scroll-board v-if="!isLayoutTwo" :config="formData" style="width: 100%; height: 252px" />
+    <dv-scroll-board v-if="isLayoutTwo" :config="formData" style="width: 100%; height: 200px" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 
 @Component
-export default class Capsule extends Vue {
-  config = {
-    data: [
-      {
-        name: '南阳',
-        value: 167
-      },
-      {
-        name: '周口',
-        value: 67
-      },
-      {
-        name: '漯河',
-        value: 123
-      },
-      {
-        name: '郑州',
-        value: 55
-      },
-      {
-        name: '西峡',
-        value: 98
-      }
-    ]
+export default class ScrollData extends Vue {
+  @Prop({ default: '', type: Object })
+  formData?: {};
+
+  @Prop({ default: '', type: String })
+  layoutTwo?: string;
+
+  isLayoutTwo = false;
+
+  mounted() {
+    if (this.layoutTwo === 'second') {
+      this.isLayoutTwo = true;
+    }
   }
 }
 </script>
 
 <style scoped lang="scss">
 #container {
-  margin: 0 auto;
+  width: 100%;
 }
-
-.dv-capsule-chart {
+.dv-scroll-board {
   color: rgba(255, 255, 255, 0.85);
 }
 </style>
