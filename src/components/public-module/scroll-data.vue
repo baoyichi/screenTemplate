@@ -30,7 +30,4 @@ export default class ScrollData extends Vue {
 #container {
   width: 100%;
 }
-.dv-scroll-board {
-  color: rgba(0, 0, 0, 0.85);
-}
 </style>

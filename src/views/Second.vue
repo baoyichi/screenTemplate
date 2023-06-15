@@ -1,68 +1,70 @@
 <template>
   <div class="home layout-two">
-    <div ref="mapTwo" class="wrap-items-box map">
-      <ol-map :current-map="isLayoutOne"></ol-map>
-    </div>
-    <div class="layout-wrap layout-wrap-left">
-      <div class="wrap-items-box">
-        <div class="wrap-items-box-card">
-          <div class="card-head">
-            <div class="card-head-title">标题</div>
+    <div class="container">
+      <div ref="mapTwo" class="wrap-items-box map">
+        <ol-map :current-map="isLayoutOne"></ol-map>
+      </div>
+      <div class="layout-wrap layout-wrap-left">
+        <div class="wrap-items-box">
+          <div class="wrap-items-box-card">
+            <div class="card-head">
+              <div class="card-head-title">标题</div>
+            </div>
+            <div class="card-body">
+              <dv-scroll-ranking-board :config="config" style="width: 500px; height: 200px" />
+            </div>
           </div>
-          <div class="card-body">
-            <dv-scroll-ranking-board :config="config" style="width: 500px; height: 200px" />
+        </div>
+        <div class="wrap-items-box">
+          <div class="wrap-items-box-card">
+            <div class="card-head">
+              <div class="card-head-title">标题</div>
+            </div>
+            <div class="card-body">
+              <chart :echarts-name="'lineCharts'" :option="lineOption"></chart>
+            </div>
+          </div>
+        </div>
+        <div class="wrap-items-box">
+          <div class="wrap-items-box-card">
+            <div class="card-head">
+              <div class="card-head-title">标题</div>
+            </div>
+            <div class="card-body">
+              <chart :echarts-name="'circleCharts'" :option="circleOption"></chart>
+            </div>
           </div>
         </div>
       </div>
-      <div class="wrap-items-box">
-        <div class="wrap-items-box-card">
-          <div class="card-head">
-            <div class="card-head-title">标题</div>
-          </div>
-          <div class="card-body">
-            <chart :echarts-name="'lineCharts'" :option="lineOption"></chart>
-          </div>
-        </div>
-      </div>
-      <div class="wrap-items-box">
-        <div class="wrap-items-box-card">
-          <div class="card-head">
-            <div class="card-head-title">标题</div>
-          </div>
-          <div class="card-body">
-            <chart :echarts-name="'circleCharts'" :option="circleOption"></chart>
+      <div class="layout-wrap layout-wrap-right">
+        <div class="wrap-items-box">
+          <div class="wrap-items-box-card">
+            <div class="card-head">
+              <div class="card-head-title">标题</div>
+            </div>
+            <div class="card-body">
+              <dv-scroll-ranking-board :config="config" style="width: 500px; height: 200px" />
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="layout-wrap layout-wrap-right">
-      <div class="wrap-items-box">
-        <div class="wrap-items-box-card">
-          <div class="card-head">
-            <div class="card-head-title">标题</div>
-          </div>
-          <div class="card-body">
-            <dv-scroll-ranking-board :config="config" style="width: 500px; height: 200px" />
+        <div class="wrap-items-box">
+          <div class="wrap-items-box-card">
+            <div class="card-head">
+              <div class="card-head-title">标题</div>
+            </div>
+            <div class="card-body">
+              <chart :echarts-name="'pieCharts'" :option="pieOption"></chart>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap-items-box">
-        <div class="wrap-items-box-card">
-          <div class="card-head">
-            <div class="card-head-title">标题</div>
-          </div>
-          <div class="card-body">
-            <chart :echarts-name="'pieCharts'" :option="pieOption"></chart>
-          </div>
-        </div>
-      </div>
-      <div class="wrap-items-box">
-        <div class="wrap-items-box-card">
-          <div class="card-head">
-            <div class="card-head-title">标题</div>
-          </div>
-          <div class="card-body">
-            <scroll-data :formData="formData" :layout-two="'second'"></scroll-data>
+        <div class="wrap-items-box">
+          <div class="wrap-items-box-card">
+            <div class="card-head">
+              <div class="card-head-title">标题</div>
+            </div>
+            <div class="card-body">
+              <scroll-data :formData="formData" :layout-two="'second'"></scroll-data>
+            </div>
           </div>
         </div>
       </div>
@@ -118,7 +120,10 @@ export default class Home1 extends Vue {
       trigger: 'axis'
     },
     legend: {
-      data: ['Email', 'Union Ads', 'Video Ads']
+      data: ['Email', 'Union Ads', 'Video Ads'],
+      textStyle: {
+        color: '#ffffff'
+      }
     },
     grid: {
       left: '3%',
@@ -132,10 +137,16 @@ export default class Home1 extends Vue {
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      axisLabel: {
+        color: '#ffffff'
+      }
     },
     yAxis: {
-      type: 'value'
+      type: 'value',
+      axisLabel: {
+        color: '#ffffff'
+      }
     },
     series: [
       {
@@ -164,7 +175,10 @@ export default class Home1 extends Vue {
     },
     legend: {
       top: '5%',
-      left: 'center'
+      left: 'center',
+      textStyle: {
+        color: '#ffffff'
+      }
     },
     series: [
       {
@@ -202,7 +216,10 @@ export default class Home1 extends Vue {
     },
     legend: {
       orient: 'horizontal',
-      left: 'left'
+      left: 'left',
+      textStyle: {
+        color: '#ffffff'
+      }
     },
     series: [
       {
@@ -262,6 +279,7 @@ export default class Home1 extends Vue {
   .map {
     height: calc(100vh - 81px);
     width: 100%;
+    background-image: none;
   }
 
   .layout-wrap {
@@ -273,6 +291,7 @@ export default class Home1 extends Vue {
 
     .wrap-items-box {
       background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
 
       .card-head {
         color: #ffffff;
